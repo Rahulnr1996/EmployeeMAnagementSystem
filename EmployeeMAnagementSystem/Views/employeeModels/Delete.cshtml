@@ -1,0 +1,90 @@
+﻿@model EmployeeMAnagementSystem.Models.employeeModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container">
+    <div class="delete-container mx-auto" style="max-width: 600px; margin-top: 50px;">
+        <h4 class="text-center">Delete Employee</h4>
+        <div class="alert alert-danger" role="alert">
+            <strong>Warning:</strong> Deleting this employee record is irreversible and will permanently remove the employee from the system.
+        </div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.place)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.place)
+            </dd>
+
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.description)
+            </dd>
+
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.email)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions text-center mt-4">
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .delete-container {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+        .delete-container dl {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .delete-container dt, .delete-container dd {
+            margin-bottom: 10px;
+        }
+
+        .delete-container dt {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .delete-container dd {
+            margin-left: 0;
+        }
+
+    .text-center .btn {
+        margin: 5px;
+    }
+
+    .alert {
+        margin-bottom: 20px;
+    }
+</style>

@@ -1,0 +1,77 @@
+﻿@model EmployeeMAnagementSystem.Models.employeeModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="details-container mx-auto" style="max-width: 600px; margin-top: 50px;">
+        <h3 class="text-center">Employee Details</h3>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.place)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.place)
+            </dd>
+
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.description)
+            </dd>
+
+            <dt class="col-sm-4 text-right">
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.email)
+            </dd>
+        </dl>
+    </div>
+    <div class="text-center mt-4">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.employeeId }, new { @class = "btn btn-warning" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+<style>
+    .details-container {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+        .details-container dl {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .details-container dt, .details-container dd {
+            margin-bottom: 10px;
+        }
+
+        .details-container dt {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .details-container dd {
+            margin-left: 0;
+        }
+
+    .text-center .btn {
+        margin: 5px;
+    }
+</style>
